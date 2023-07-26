@@ -1,0 +1,31 @@
+﻿@model List<Circular_Bus_App.Models.Database.Cart>
+
+@{
+    ViewBag.Title = "ViewSell";
+    Layout = "~/Views/Shared/_BusOwnerLayout .cshtml";
+}
+
+<h2>ViewSell</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Stopage</th>
+        <th>Fair</th>
+    </tr>
+    @foreach (var n in Model)
+    {
+        <tr>
+            <th>@n.BusInfo.B_Name</th>
+            <th>@n.Stopage</th>
+            <th>@n.BS_Fair</th>
+        </tr>
+    }
+</table>
+<table class="table" align="center">
+    <tr>
+        <td><h2>Total </h2></td>
+        <td><h2>@ViewBag.SellPrice tk</td>
+    </tr>
+
+</table>

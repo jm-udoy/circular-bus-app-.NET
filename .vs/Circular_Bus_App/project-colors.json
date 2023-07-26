@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "dc4ac520-c911-4680-b3ad-9c4b6ec1f60d": {
+      "ProjectGuid": "dc4ac520-c911-4680-b3ad-9c4b6ec1f60d",
+      "DisplayName": "Circular_Bus_App",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

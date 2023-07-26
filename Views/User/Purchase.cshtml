@@ -1,0 +1,50 @@
+﻿@model  Circular_Bus_App.Models.Database.BusRoute
+
+
+@{
+    ViewBag.Title = "Purchase";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2 align="center">Bus Ticket From (@Model.BR_Start)  to  (@Model.BR_End) at @Model.BR_Time</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Bus Id</th>
+            <th>Start and End point</th>
+            <td>Stopage</td>
+            <td>Fair</td>
+            <td>Ticket</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center" rowspan="3">@Model.BR_BId</td>
+            <td align="center" rowspan="3">@Model.BR_Start  to  @Model.BR_End</td>
+            <td>@Model.BR_Stopage1</td>
+            <td>@Model.BR_FairInS1</td>
+            <td>    <a href="/User/Cart/?data1=@Model.BR_Stopage1&data2=@Model.BR_FairInS1&data3=@Model.BR_BId&data4=@Model.BR_Id"><button type="button" class="btn-success">BUY</button></a>    </td>
+        </tr>
+        <tr>
+            <td>@Model.BR_Stopage2</td>
+            <td>@Model.BR_FairInS2</td>
+            <td>    <a href="/User/Cart/?data1=@Model.BR_Stopage2&data2=@Model.BR_FairInS2&data3=@Model.BR_BId&data4=@Model.BR_Id"><button type="button" class="btn-success">BUY</button></a>    </td>
+        </tr>
+        <tr>
+            <td>@Model.BR_Stopage3</td>
+            <td>@Model.BR_FairInS3</td>
+            <td>    <a href="/User/Cart/?data1=@Model.BR_Stopage3&data2=@Model.BR_FairInS3&data3=@Model.BR_BId&data4=@Model.BR_Id"><button type="button" class="btn-success">BUY</button></a>    </td>
+
+        </tr>
+    </tbody>
+</table>
+
+<table>
+
+    <table>
+        <a href="../CartDetail"><button type="button">Cart</button></a>
+
+    </table>
+
+</table>
+

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Circular_Bus_App.Models.Database.BusInfo>
+
+@{
+    ViewBag.Title = "BusDetails";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>BusDetails</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_NoPlate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Route)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Fair)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_AvailableSeat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_OwnedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_SId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_NoPlate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_Route)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_Fair)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_AvailableSeat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_OwnedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_SId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_Status)
+        </td>
+       
+    </tr>
+}
+
+</table>

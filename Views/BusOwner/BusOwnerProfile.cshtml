@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Circular_Bus_App.Models.Database.User>
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_BusOwnerLayout .cshtml";
+}
+
+<h2>Profile</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Password</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>DOB</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    @foreach (var n in Model)
+    {
+        <tr>
+
+            <td>@n.U_Id</td>
+            <td>@n.U_UserName</td>
+            <td>@n.U_Password</td>
+            <td>@n.U_Phone</td>
+            <td>@n.U_Email</td>
+            <td>@n.U_Address</td>
+            <td>@n.U_Gender</td>
+            <td>@n.U_DateofBirth</td>
+            <td><a href="/BusOwner/BusOwnerEdit/@n.U_Id" class="btn btn-success">Edit</a> </td>
+            <td><a href="/BusOwner/BusOwnerDelete/@n.U_Id" class="btn btn-danger">Delete</a> </td>
+
+        </tr>
+    }
+</table>

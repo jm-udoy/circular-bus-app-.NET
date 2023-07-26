@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Circular_Bus_App.Models.Database.User>
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_SupervisorLayout.cshtml";
+}
+
+<h2>Your Dashboard</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>DOB</th>
+        <th>Actions</th>
+
+    </tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+
+            <td>@s.U_Id</td>
+            <td>@s.U_UserName</td>
+            <td>@s.U_Phone</td>
+            <td>@s.U_Email</td>
+            <td>@s.U_Address</td>
+            <td>@s.U_Gender</td>
+            <td>@s.U_DateofBirth</td>
+            <td>
+                <a href="/Supervisor/Edit/@s.U_Id" class="btn btn-success">Edit</a>
+                <a href="/Supervisor/Delete/@s.U_Id" class="btn btn-danger">Delete</a>
+            </td>
+
+        </tr>
+    }
+</table>
+

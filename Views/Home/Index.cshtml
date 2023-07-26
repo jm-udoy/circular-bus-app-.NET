@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Circular_Bus_App.Models.Database.BusRoute>
+
+@{ ViewBag.Title = "Home Page"; }
+<h2 align="center">Bus Route Information</h2>
+<h4 align="Right">Welocome @Session["username"] In Short Bus Service</h4>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Bus Id</th>
+        <th>Starting point</th>
+        <th>End point</th>
+        <th>Stopage 1</th>
+        <th>Stopage 2</th>
+        <th>Stopage 3</th>
+        <th>Bus Timing</th>
+        <th>Bus Fair 1</th>
+        <th>Bus Fair 2</th>
+        <th>Bus Fair 3</th>
+        <th>Tickets</th>
+    </tr>
+@foreach (var b in Model)
+    {
+        <tr>
+            <td>@b.BR_BId</td>
+            <td>@b.BR_Start</td>
+            <td>@b.BR_End</td>
+            <td>@b.BR_Stopage1</td>
+            <td>@b.BR_Stopage2</td>
+            <td>@b.BR_Stopage3</td>
+            <td>@b.BR_Time</td>
+            <td>@b.BR_FairInS1</td>
+            <td>@b.BR_FairInS2</td>
+            <td>@b.BR_FairInS3</td>
+            <td> <a href="../User/Purchase/@b.BR_BId"><button type="button" class="btn-success">Purchase</button></a></td>
+           
+
+        </tr>}
+</table>
+<table>
+    <a href="../User/BusDetails"><button  type="button">Bus Details</button></a>
+ 
+</table>

@@ -1,0 +1,40 @@
+﻿@model List<Circular_Bus_App.Models.Database.BusInfo>
+@{
+    ViewBag.Title = "AssignedBuses";
+    Layout = "~/Views/Shared/_SupervisorLayout.cshtml";
+}
+
+<h2 class=" label-primary">Assigned Buses</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Bus Id</th>
+        <th>Name</th>
+        <th>Number Plate</th>
+        <th>Type</th>
+        <th>Route</th>
+        <th>Time</th>
+        <th>Fair</th>
+        <th>Availble Seat</th>
+        <th>Bus Status</th>
+    </tr>
+
+    @foreach (var b in Model)
+    {
+        <tr>
+            <td>@b.B_Id</td>
+            <td>@b.B_Name</td>
+            <td>@b.B_NoPlate</td>
+            <td>@b.B_Type</td>
+            <td>@b.B_Route</td>
+            <td>@b.B_Time</td>
+            <td>@b.B_Fair</td>
+            <td>
+                @b.B_AvailableSeat  <a href="/Supervisor/EditSeat/@b.B_Id" class="btn btn-success">Update Seat</a>
+
+            </td>
+            <td>@b.B_Status</td>
+        </tr>
+    }
+</table>
+

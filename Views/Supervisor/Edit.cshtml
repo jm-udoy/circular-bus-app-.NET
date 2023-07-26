@@ -1,0 +1,37 @@
+﻿@model Circular_Bus_App.Models.Database.User
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_SupervisorLayout.cshtml";
+}
+
+<h2 class="label-info">Edit Your Profile</h2>
+
+<form action="/Supervisor/Edit" method="post">
+    <input type="hidden" name="U_Id" value="@Model.U_Id" />
+
+    <input type="text" name="U_UserName" value="@Model.U_UserName" /> <br />
+    @Html.ValidationMessageFor(model => model.U_UserName, "", new { @class = "text-danger" })
+
+    <input type="password" name="U_Password" value="@Model.U_Password" /> <br />
+    @Html.ValidationMessageFor(model => model.U_Password, "", new { @class = "text-danger" })
+
+    <input type="text" name="U_Phone" value="@Model.U_Phone" /> <br />
+    @Html.ValidationMessageFor(model => model.U_Phone, "", new { @class = "text-danger" })
+
+    <input type="text" name="U_Email" value="@Model.U_Email" /> <br />
+    @Html.ValidationMessageFor(model => model.U_Email, "", new { @class = "text-danger" })
+
+    <input type="text" name="U_Address" value="@Model.U_Address" /> <br />
+    @Html.ValidationMessageFor(model => model.U_Address, "", new { @class = "text-danger" })
+
+    <input type="text" name="U_Gender" value="@Model.U_Gender" /><br />
+    @Html.ValidationMessageFor(model => model.U_Gender, "", new { @class = "text-danger" })
+
+    <input type="text" name="U_DateofBirth" value="@Model.U_DateofBirth" /><br />
+    @Html.ValidationMessageFor(model => model.U_DateofBirth, "", new { @class = "text-danger" })
+
+    <input type="hidden" name="U_Role" value="@Model.U_Role" />
+
+    <input type="submit" class="btn btn-danger" value="Update Profile" />
+
+</form>

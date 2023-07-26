@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Circular_Bus_App.Models.Database.BusRoute>
+
+@{
+    ViewBag.Title = "BusRouteList";
+}
+
+<h2>BusRouteList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BR_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BR_BId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BR_Start)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BR_End)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BR_Stopage1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BR_Stopage2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BR_Stopage3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BR_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BR_FairInS1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BR_FairInS2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BR_FairInS3)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR_BId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR_Start)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR_End)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR_Stopage1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR_Stopage2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR_Stopage3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR_Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR_FairInS1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR_FairInS2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR_FairInS3)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

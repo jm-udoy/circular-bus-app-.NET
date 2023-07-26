@@ -1,0 +1,29 @@
+﻿@model Circular_Bus_App.Models.Database.BusInfo
+
+@{
+    ViewBag.Title = "BusRoute";
+    Layout = "~/Views/Shared/_BusOwnerLayout .cshtml";
+}
+
+<h2>BusRoute</h2>
+Bus Route for @Model.B_Name
+<br />
+@Model.B_Route
+<form action="/BusOwner/BusRoute" method="post">
+
+    <input type="hidden" name="BR_BId" value="@Model.B_Id" class="form-control" />
+
+    <input type="text" name="BR_Start" placeholder="Starting Location" class="form-control" />
+    <input type="text" name="BR_End" placeholder="End Loaction" class="form-control" />
+    <input type="text" name="BR_Stopage1" placeholder="1st Stopage" class="form-control" />
+    <input type="text" name="BR_Stopage2" placeholder="2nd Stopage" class="form-control" />
+    <input type="text" name="BR_Stopage3" placeholder="3rd Stopage" class="form-control" />
+    <input type="text" name="BR_Time" value="@Model.B_Time" placeholder="Time" class="form-control" />
+    <input type="text" name="BR_FairInS1" placeholder="Fair for 1st Stopage" class="form-control" />
+    <input type="text" name="BR_FairInS2" placeholder="Fair for 2nd Stopage" class="form-control" />
+    <input type="text" name="BR_FairInS3" placeholder="Fair for 3rd Stopage" class="form-control" />
+
+
+    <input type="submit" value="Add route" />
+
+</form>

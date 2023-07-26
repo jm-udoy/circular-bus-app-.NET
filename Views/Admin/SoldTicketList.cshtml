@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Circular_Bus_App.Models.Database.SoldTicket>
+
+@{
+    ViewBag.Title = "SoldTicketList";
+}
+
+<h2>SoldTicketList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ST_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ST_UId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ST_Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ST_BId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ST_BName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ST_BNoPlate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ST_BType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ST_BRoute)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ST_Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ST_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ST_UId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ST_Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ST_BId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ST_BName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ST_BNoPlate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ST_BType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ST_BRoute)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ST_Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

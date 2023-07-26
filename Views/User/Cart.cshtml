@@ -1,0 +1,42 @@
+﻿@model  IEnumerable < Circular_Bus_App.Models.Database.Cart>
+
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2 align="center">Purchase Ticket Information</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Bus Id</th>
+        <th>Stopage </th>
+        <th>Bus Fair </th>
+        <th>Remove ticket</th>
+
+    </tr>
+    @foreach (var i in Model)
+    {
+<tr>
+    <td>@i.B_Id</td>
+    <td>@i.Stopage</td>
+    <td>@i.BS_Fair</td>
+    <td> <a href="/User/DeleteTicket/@i.CR_Id"><button type="button" class="btn-danger">Cancel Ticket</button></a></td>
+
+</tr>
+    }
+</table>
+
+<table class="table" align="center">
+    <tr>
+        <td><h2>Total Bus Fair</h2></td>
+        <td><h2>@ViewBag.SP tk</td>
+    </tr>
+
+</table>
+
+<table>
+    <a href="/Home/Index"><button type="button">Go back to Purchase</button></a>
+
+</table>

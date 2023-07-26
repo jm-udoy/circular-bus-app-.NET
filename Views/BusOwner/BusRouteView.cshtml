@@ -1,0 +1,38 @@
+﻿@model List<Circular_Bus_App.Models.Database.BusRoute>
+
+@{
+    ViewBag.Title = "BusRouteView";
+    Layout = "~/Views/Shared/_BusOwnerLayout .cshtml";
+}
+
+<h2>BusRouteView</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Starting Location</th>
+        <th>End Loaction</th>
+        <th>1st Stopage</th>
+        <th>2nd Stopage</th>
+        <th>3rd Stopage</th>
+        <th>Time</th>
+        <th>Fair for 1st Stopage</th>
+        <th>Fair for 2nd Stopage</th>
+        <th>Fair for 3rd Stopage</th>
+    </tr>
+    @foreach (var n in Model)
+    {
+        <tr>
+            <th>@n.BR_Start</th>
+            <th>@n.BR_End</th>
+            <th>@n.BR_Stopage1</th>
+            <th>@n.BR_Stopage2</th>
+            <th>@n.BR_Stopage3</th>
+            <th>@n.BR_Time</th>
+            <th>@n.BR_FairInS1</th>
+            <th>@n.BR_FairInS2</th>
+            <th>@n.BR_FairInS3</th>
+            <th><a href="/BusOwner/BusRouteEdit/@n.BR_Id" class="btn btn-success">Update route</a></th>
+            <th><a href="/BusOwner/BusRouteDelete/@n.BR_Id" class="btn btn-danger">Delete route</a></th>
+        </tr>
+    }
+</table>

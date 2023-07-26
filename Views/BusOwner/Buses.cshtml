@@ -1,0 +1,38 @@
+﻿@model List<Circular_Bus_App.Models.Database.BusInfo>
+
+@{
+    ViewBag.Title = "Buses";
+    Layout = "~/Views/Shared/_BusOwnerLayout .cshtml";
+}
+
+<h2>Buses</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>No.Plate</th>
+        <th>Type</th>
+        <th>Route</th>
+        <th>Time</th>
+        <th>Fair</th>
+        <th>Available Seat</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var n in Model)
+    {
+        <tr>
+            <th>@n.B_Name</th>
+            <th>@n.B_NoPlate</th>
+            <th>@n.B_Type</th>
+            <th>@n.B_Route</th>
+            <th>@n.B_Time</th>
+            <th>@n.B_Fair</th>
+            <th>@n.B_AvailableSeat</th>
+            <th><a href="/BusOwner/BusEdit/@n.B_Id" class="btn btn-success">Update</a></th>
+            <th><a href="/BusOwner/BusDelete/@n.B_Id" class="btn btn-danger">Delete</a></th>
+            <th><a href="/BusOwner/BusRoute/@n.B_Id" class="btn btn-success">Add a route</a></th>
+            <th><a href="/BusOwner/BusRouteView/@n.B_Id" class="btn btn-success">View routes</a></th>
+        </tr>
+    }
+</table>

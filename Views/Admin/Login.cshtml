@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<div>
+    @if (TempData["msg"] != null)
+    {
+        <h3 class="alert-danger" style="padding: 10px;">@TempData["msg"]</h3>
+    }
+    <h2 class="text-primary text-uppercase">Admin Login</h2>
+
+    <form action="/Admin/Login" method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="text" class="form-control" name="A_UserName">
+            <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" name="A_Password">
+        </div>
+        <button style="margin-top:10px;" type="submit" value="Login" class="btn btn-primary">Submit</button>
+    </form>
+</div>

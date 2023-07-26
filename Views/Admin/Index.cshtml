@@ -1,0 +1,63 @@
+﻿
+@model Circular_Bus_App.Models.Database.Admin
+
+<div class="row bg-primary" style="padding:10px;">
+    <div class="col-lg-10">
+        <h1 class="text-uppercase text-center">Admin Dashboard</h1>
+    </div>
+    <div class="col-lg-2">
+        <a href="/admin/logout" class="btn btn-danger" style="width:100%; margin-top: 20px;">Logout</a>
+    </div>
+</div>
+
+@*User button *@
+<a href="/admin/userlist" style="">
+    <div class="btn btn-primary" style="padding:20px; margin:30px; min-width:300px;">
+        <p><i class="glyphicon glyphicon-user" style="font-size:70px;"></i></p>
+        <span class="text-uppercase" style="font-size:20px; padding:15px;">User List</span>
+    </div>
+</a>
+
+@*Bus info button *@
+<a href="/admin/businfolist" style="">
+    <div class="btn btn-warning" style="padding:20px; margin:30px; min-width:300px;">
+        <p><i class="glyphicon glyphicon-bold" style="font-size:70px;"></i></p>
+        <span class="text-uppercase" style="font-size:20px; padding:15px;">Bus Info</span>
+    </div>
+</a>
+
+@*Bus owner button *@
+<a href="/admin/BusOwnerList" style="">
+    <div class="btn btn-success" style="padding:20px; margin:30px; min-width:300px;">
+        <p><i class="glyphicon glyphicon-briefcase" style="font-size:70px;"></i></p>
+        <span class="text-uppercase" style="font-size:20px; padding:15px;">Bus Owners</span>
+    </div>
+</a>
+
+@*Bus route button *@
+<a href="/admin/BusRouteList" style="">
+    <div class="btn btn-danger" style="padding:20px; margin:30px; min-width:300px;">
+        <p><i class="glyphicon glyphicon-road" style="font-size:70px;"></i></p>
+        <span class="text-uppercase" style="font-size:20px; padding:15px;">Bus Route</span>
+    </div>
+</a>
+
+@*Sold Ticket button *@
+<a href="/admin/SoldTicketList" style="">
+    <div class="btn btn-success" style="padding:20px; margin:30px; min-width:300px;">
+        <p><i class="glyphicon glyphicon-tags" style="font-size:70px;"></i></p>
+        <span class="text-uppercase" style="font-size:20px; padding:15px;">Sold Ticket</span>
+    </div>
+</a>
+
+@*Supervisors button *@
+<a href="/admin/SupervisorList" style="">
+    <div class="btn btn-info" style="padding:20px; margin:30px; min-width:300px;">
+        <p><i class="glyphicon glyphicon-bishop" style="font-size:70px;"></i></p>
+        <span class="text-uppercase" style="font-size:20px; padding:15px;">Supervisorss</span>
+    </div>
+</a>
+
+<h2>Welcome: @Model.A_UserName</h2>
+<h2>Phone: @Model.A_Phone</h2>
+<h2>Email: @Model.A_Email</h2>

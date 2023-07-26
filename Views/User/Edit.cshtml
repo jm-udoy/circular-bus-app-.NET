@@ -1,0 +1,26 @@
+﻿@model Circular_Bus_App.Models.Database.User
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+<h2>Edit Profile</h2>
+
+
+<form action="/User/Edit" method="post">
+    <input type="hidden" name="U_Id" value="@Model.U_Id" />
+    <input type="text" name="U_UserName" value="@Model.U_UserName" />
+    <input type="password" name="U_Password" value="@Model.U_Password" />
+    <input type="text" name="U_Phone" value="@Model.U_Phone" />
+    <input type="text" name="U_Email" value="@Model.U_Email" />
+    <input type="text" name="U_Address" value="@Model.U_Address" />
+    <input type="text" name="U_Gender" value="@Model.U_Gender" />
+    <input type="text" name="U_DateofBirth" value="@Model.U_DateofBirth" />
+    <input type="hidden" name="U_Role" value="@Model.U_Role" />
+
+    <input type="submit" class="btn btn-danger" value="Update" />
+
+
+</form>

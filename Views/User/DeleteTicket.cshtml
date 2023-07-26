@@ -1,0 +1,18 @@
+﻿@model Circular_Bus_App.Models.Database.Cart
+
+@{
+    ViewBag.Title = "DeleteTicket";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>DeleteTicket</h2>
+
+<form action="/User/DeleteTicket" method="post">
+    <input type="text" name="CR_Id" value="@Model.CR_Id" />
+    <input type="text" name="U_Id" value="@Model.U_Id" />
+    <input type="text" name="B_Id" value="@Model.B_Id" />
+    <input type="text" name="Stopage" value="@Model.Stopage" />
+    <input type="text" name="BS_Fair" value="@Model.BS_Fair" />
+
+    <input type="submit" class="btn btn-danger" value="Conferm Delete" />
+</form>

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Circular_Bus_App.Models.Database.User>
+
+@{
+    ViewBag.Title = "UserList";
+}
+
+<h2>UserList</h2>
+
+<p>
+    <a href="/admin/createuser" class="btn btn-warning">Create New User</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.U_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.U_UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.U_Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.U_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.U_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.U_Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.U_Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.U_DateofBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.U_Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.U_Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_DateofBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_Status)
+            </td>
+            <td>
+                <a href="@Url.Action("User", new { item.U_Id,item.U_UserName,item.U_Password,item.U_Phone,item.U_Email,item.U_Address,item.U_Gender,item.U_DateofBirth,item.U_Role,item.U_Status })" class="btn btn-primary">Edit</a> |
+                <a href="@Url.Action("DeleteUser", new { item.U_Id})" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>

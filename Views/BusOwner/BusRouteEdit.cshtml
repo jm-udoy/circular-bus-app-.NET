@@ -1,0 +1,30 @@
+﻿@model Circular_Bus_App.Models.Database.BusRoute
+
+@{
+    ViewBag.Title = "BusRouteEdit";
+    Layout = "~/Views/Shared/_BusOwnerLayout .cshtml";
+}
+
+<h2>BusRouteEdit</h2>
+
+Bus Route for @Model.BusInfo.B_Name
+@Model.BusInfo.B_Route
+<form action="/BusOwner/BusRouteEdit" method="post">
+
+    <input type="hidden" name="BR_Id" value="@Model.BR_Id" class="form-control" />
+    <input type="hidden" name="BR_BId" value="@Model.BR_BId" class="form-control" />
+
+    <input type="text" name="BR_Start" value="@Model.BR_Start" placeholder="Starting Location" class="form-control" />
+    <input type="text" name="BR_End" value="@Model.BR_End" placeholder="End Loaction" class="form-control" />
+    <input type="text" name="BR_Stopage1" value="@Model.BR_Stopage1" placeholder="1st Stopage" class="form-control" />
+    <input type="text" name="BR_Stopage2" value="@Model.BR_Stopage2" placeholder="2nd Stopage" class="form-control" />
+    <input type="text" name="BR_Stopage3" value="@Model.BR_Stopage3" placeholder="3rd Stopage" class="form-control" />
+    <input type="text" name="BR_Time" value="@Model.BR_Time" placeholder="Time" class="form-control" />
+    <input type="text" name="BR_FairInS1" value="@Model.BR_FairInS1" placeholder="Fair for 1st Stopage" class="form-control" />
+    <input type="text" name="BR_FairInS2" value="@Model.BR_FairInS2" placeholder="Fair for 2nd Stopage" class="form-control" />
+    <input type="text" name="BR_FairInS3" value="@Model.BR_FairInS3" placeholder="Fair for 3rd Stopage" class="form-control" />
+
+
+    <input type="submit" value="Edit route" />
+
+</form>

@@ -1,0 +1,44 @@
+﻿@model Circular_Bus_App.Models.Database.BusInfo
+
+@{
+    ViewBag.Title = "BusEdit";
+    Layout = "~/Views/Shared/_BusOwnerLayout .cshtml";
+}
+
+<h2>BusEdit</h2>
+
+<form action="/BusOwner/BusEdit" method="post">
+
+    <input type="hidden" name="B_Id" value="@Model.B_Id" class="form-control" />
+
+    <input type="text" name="B_Name" value="@Model.B_Name" placeholder="Bus Name" class="form-control" />
+    @Html.ValidationMessageFor(model => model.B_Name, "", new { @class = "text-danger" })
+
+    <input type="text" name="B_NoPlate" value="@Model.B_NoPlate" placeholder="Number Plate" class="form-control" />
+    @Html.ValidationMessageFor(model => model.B_NoPlate, "", new { @class = "text-danger" })
+
+    <input type="text" name="B_Type" value="@Model.B_Type" placeholder="Bus Type" class="form-control" />
+    @Html.ValidationMessageFor(model => model.B_Type, "", new { @class = "text-danger" })
+
+    <input type="text" name="B_Route" value="@Model.B_Route" placeholder="Bus Route" class="form-control" />
+    @Html.ValidationMessageFor(model => model.B_Route, "", new { @class = "text-danger" })
+
+    <input type="text" name="B_Time" value="@Model.B_Time" placeholder="Departure time" class="form-control" />
+    @Html.ValidationMessageFor(model => model.B_Time, "", new { @class = "text-danger" })
+
+    <input type="text" name="B_Fair" value="@Model.B_Fair" placeholder="Bus Fair" class="form-control" />
+    @Html.ValidationMessageFor(model => model.B_Fair, "", new { @class = "text-danger" })
+
+    <input type="hidden" name="B_AvailableSeat" value="@Model.B_AvailableSeat" class="form-control" />
+
+    <input type="hidden" name="B_OwnedBy" value=@Session["userid"] class="form-control" />
+
+    <input type="text" name="B_SId" value="@Model.B_SId" placeholder="DateofBirth" class="form-control" />
+    @Html.ValidationMessageFor(model => model.B_SId, "", new { @class = "text-danger" })
+
+    <input type="hidden" name="B_Status" value="@Model.B_Status" class="form-control" />
+
+
+    <input type="submit" value="UPDATE" />
+
+</form>

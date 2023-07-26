@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Circular_Bus_App.Models.Database.Cart>
+
+@{
+    ViewBag.Title = "CartDetail";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>CartDetails</h2>
+<table class="table">
+    <tr>
+        <th>User Id</th>
+        <th>Bus Id</th>
+        <th>Stopage</th>
+        <th>Bus Fair</th> 
+        <th>Remove ticket</th>
+        <th></th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.U_Id</td>
+            <td>@i.B_Id </td>
+            <td>@i.Stopage</td>
+            <td>@i.BS_Fair</td>
+            <td> <a href="/User/DeleteTicket/@i.CR_Id"><button type="button" class="btn-danger">Cancel Ticket</button></a></td>
+
+        </tr>
+    }
+
+</table>
+
+<table class="table" align="center">
+    <tr>
+        <td><h2>Total Bus Fair</h2></td>
+        <td><h2>@ViewBag.SumPrice tk</td>
+    </tr>
+
+</table>
+
